@@ -1,12 +1,16 @@
-import React from "react";
+import { WaterDamageTwoTone } from "@mui/icons-material";
 import axios from "axios";
 import "./WeatherApi.css";
 
-//The variable for our API url with a specific long and lat.
+/**
+ * The variable for our API url with a specific long and lat.
+ */
 const urlPath =
   "https://api.openweathermap.org/data/2.5/weather?lat=57.700054975231886&lon=11.965259019774122&appid=5cde6ed5653138cdcd61752763393ab2&units=metric";
 
-//Managing the contact with the API.
+/**
+ * Here we make our API GET request for the weather today.
+ */
 const getTodayWeather = (url) => {
   return (
     axios
@@ -22,35 +26,29 @@ const getTodayWeather = (url) => {
   );
 };
 
-//A function were we are printing the object, calling this one in weatherApi.
-async function printResult() {
+/**
+ * Function were we are creating the object we want.
+ */
+export async function apiCallWeatherToday() {
   let tmp = getTodayWeather(urlPath);
   Promise.resolve(tmp).then((value) => {
     let weatherObj = new TodayWeather(
-      value.coord.lon,
       value.coord.lat,
+      value.coord.lon,
       value.main.temp,
       value.weather[0].main,
       value.weather[0].description,
       "Göteborg"
     );
-    console.log(weatherObj);
+    console.log("The weather object", weatherObj);
+    console.log("The value variable", value);
+    return weatherObj;
   });
 }
 
-//The button that calls the function printResult onClick
-class WeatherApi extends React.Component {
-  render() {
-    return (
-      <button className="button" onClick={printResult}>
-        Tryck här då
-      </button>
-    );
-  }
-}
-
-export default WeatherApi;
-
+/**
+ * The class which contains our constructor for our object.
+ */
 class TodayWeather {
   constructor(
     lat,

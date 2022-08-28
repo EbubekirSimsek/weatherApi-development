@@ -1,12 +1,11 @@
-import { Button } from "@mui/material";
 import "./App.css";
-import WeatherApi from "./components/WeatherApi";
+import WeatherCard from "./components/WeatherCard";
 
+//Calling our WheaterApi here and finaly getting information from the API.
 function App() {
   return (
     <div className="App-header">
-      <p>Test</p>
-      <WeatherApi></WeatherApi>
+      <WeatherCard></WeatherCard>
     </div>
   );
 }
