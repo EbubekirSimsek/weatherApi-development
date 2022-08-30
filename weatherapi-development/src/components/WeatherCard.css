@@ -1,0 +1,36 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+.cardToday {
+  margin: 20px auto;
+  width: 340px;
+  height: 220px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 4px 0.3px 0.3px 1px rgba(0, 0, 0, 0.2);
+  font-family: "Roboto", sans-serif;
+}
+
+.city,
+.date {
+  color: gray;
+  margin-left: 35px;
+}
+
+.city {
+  padding-top: 40px;
+  font-size: 30px;
+}
+
+.date {
+  font-size: 20px;
+  line-height: 45px;
+}
+
+.temp {
+  position: absolute;
+  display: inline;
+  padding-left: 10px;
+  padding-top: 20px;
+  font-size: 50px;
+  color: black;
+}

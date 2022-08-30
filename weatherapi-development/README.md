@@ -2,13 +2,24 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Requirement
 
-In the project directory, you can run:
+Install `npm`
 
-### `npm start`
+- Preferably version 8.15.0
 
-Runs the app in the development mode.\
+After installing npm download `axios` , the promised-based HTTP client by running:
+
+- `npm install axios`
+
+## Run the application
+
+1. Clone this repository
+2. Open up the terminal, go to root directory `src`.
+3. Run the command:
+   - `npm start`
+
+The app runs now in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
