@@ -23,7 +23,9 @@ const date = `${current.getDate()} ${current.toLocaleString("en-us", {
 })} ${current.getFullYear()}`;
 
 /**
- * Our function which uses the setData and useEffect to store the api call and the weather view.
+ * The function uses the setData and useEffect to store the api call
+ * iconurl for the icons, concating the url with the iconid to match url src path.
+ * @returns The card component used to view today weather.
  */
 export default function WeatherCard() {
   const [result, setData] = useState();
@@ -33,22 +35,20 @@ export default function WeatherCard() {
     getTodayWeather(urlPathWeatherToday).then((result) => setData(result));
   }, []);
 
-  /**
-   * The body that are displayed.
-   */
   return (
     <div>
-      <div className="card">
+      <div className="cardToday">
         <div className="city"> Göteborg </div>
         <div className="date">{date} </div>
         <img
           src={result ? iconUrl.concat(result.weather[0].icon, "@2x.png") : ""}
+          alt=""
         />
         <div className="temp">
           {result ? Math.round(result.main.temp) : ""}°C
         </div>
       </div>
-      <UpComingWeatherCard></UpComingWeatherCard>
+      <UpComingWeatherCard />
     </div>
   );
 }

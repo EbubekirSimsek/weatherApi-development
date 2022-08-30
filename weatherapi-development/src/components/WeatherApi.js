@@ -1,7 +1,9 @@
 import axios from "axios";
 
 /**
- * Here we make our API GET request for the weather today.
+ * The API get request function
+ * @param {*} url The api url
+ * @returns Promise object with JSON Data when resolved.
  */
 export async function getTodayWeather(url) {
   return await axios
